@@ -1,0 +1,39 @@
+{
+  "name": "ive-hub-lambda-function",
+  "version": "1.0.0",
+  "desription": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker run --rm -v $(pwd)/dist:/var/task:ro,delegated -v $(pwd):/opt:ro,delegated lambci/lambda:nodejs12.x index.handler"
+  },
+  "keywords": [
+    "aws",
+    "ive",
+    "chrome",
+    "chromium",
+    "cdk",
+    "lambda",
+    "serverless",
+    "it114115",
+    "dynamodb",
+    "amplify"
+  ],
+  "author": {
+    "name": "Miklet",
+    "email": "me@miklet.pro",
+    "url": "https://miklet.pro"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chrome-aws-lambda": "^2.0.1",
+    "puppeteer-core": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MikletNg/ive-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MikletNg/ive-hub/issues",
+    "email": "me@miklet.pro"
+  }
+}

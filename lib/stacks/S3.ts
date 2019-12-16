@@ -8,6 +8,7 @@ interface StackProps extends cdk.StackProps{
 
 export class S3Stack extends cdk.Stack {
     web_bucket: Bucket
+    data_bucket: Bucket
     // www_bucket: Bucket
 
     constructor(scope: cdk.Construct, id: string, props: StackProps) {
@@ -16,6 +17,15 @@ export class S3Stack extends cdk.Stack {
         const {encryptionKey} = props
 
         this.web_bucket = new Bucket(this, 'WebS3Bucket', {
+            versioned: true,
+            blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+            websiteErrorDocument: 'error.html',
+            websiteIndexDocument: 'index.html',
+            encryption: BucketEncryption.KMS,
+            encryptionKey
+        })
+
+        this.data_bucket = new Bucket(this, 'DataS3Bucket', {
             versioned: true,
             blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
             websiteErrorDocument: 'error.html',
