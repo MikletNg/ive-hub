@@ -33,5 +33,7 @@
     "@aws-cdk/aws-s3": "^1.19.0",
     "@aws-cdk/core": "^1.19.0",
     "source-map-support": "^0.5.16"
-  }
+  },
+  "author": "Miklet",
+  "license": "MIT"
 }
